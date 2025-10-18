@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поздравление с котиками 🐱</title>
+
+  <!-- Шрифт Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #ff5f6d;
+      --accent2: #ffc371;
+      --text: #222;
+      --bg: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
+      background: var(--bg);
+      color: var(--text);
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .section {
+      display: none;
+      background: #fff;
+      border-radius: 16px;
+      -webkit-border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      padding: 40px 30px;
+      -webkit-animation: fadeIn 0.6s ease;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    h1 {
+      background: -webkit-linear-gradient(90deg, var(--accent), var(--accent2));
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+      font-size: 2.2rem;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      font-size: 1.2rem;
+    }
+
+    button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      -webkit-transition: background 0.3s, -webkit-transform 0.2s;
+      transition: background 0.3s, transform 0.2s;
+      font-family: 'Dancing Script', cursive;
+      -webkit-appearance: none;
+    }
+
+    button:hover {
+      background: var(--accent2);
+      color: #222;
+      -webkit-transform: translateY(-2px);
+      transform: translateY(-2px);
+    }
+
+    img {
+      width: 180px;
+      height: auto;
+      border-radius: 12px;
+      -webkit-border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      -webkit-user-drag: none;
+    }
+
+    @-webkit-keyframes fadeIn {
+      from { opacity: 0; -webkit-transform: translateY(10px); transform: translateY(10px); }
+      to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; -webkit-transform: translateY(10px); transform: translateY(10px); }
+      to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+    }
+
+    @-webkit-keyframes epicAppear {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(30px) scale(0.5) rotate(-15deg);
+        transform: translateY(30px) scale(0.5) rotate(-15deg);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: translateY(-10px) scale(1.2) rotate(5deg);
+        transform: translateY(-10px) scale(1.2) rotate(5deg);
+      }
+      80% {
+        -webkit-transform: translateY(5px) scale(0.95) rotate(-2deg);
+        transform: translateY(5px) scale(0.95) rotate(-2deg);
+      }
+      100% {
+        opacity: 1;
+        -webkit-transform: translateY(0) scale(1) rotate(0deg);
+        transform: translateY(0) scale(1) rotate(0deg);
+      }
+    }
+
+    @keyframes epicAppear {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(30px) scale(0.5) rotate(-15deg);
+        transform: translateY(30px) scale(0.5) rotate(-15deg);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: translateY(-10px) scale(1.2) rotate(5deg);
+        transform: translateY(-10px) scale(1.2) rotate(5deg);
+      }
+      80% {
+        -webkit-transform: translateY(5px) scale(0.95) rotate(-2deg);
+        transform: translateY(5px) scale(0.95) rotate(-2deg);
+      }
+      100% {
+        opacity: 1;
+        -webkit-transform: translateY(0) scale(1) rotate(0deg);
+        transform: translateY(0) scale(1) rotate(0deg);
+      }
+    }
+
+    .age_obj {
+      -webkit-animation: epicAppear 1.2s forwards;
+      animation: epicAppear 1.2s forwards;
+      display: inline-block;
+    }
+
+    @media (max-width: 480px) {
+      .section {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      img {
+        width: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Главная -->
+  <div id="home" class="section active">
+    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="котик приветствует">
+    <h1>Здравствуйте, Саида Эже! 👋</h1>
+    <p>Это страница с поздравлением!<br>Хочу поздравить вас 🩷</p>
+    <button onclick="showSection('congrats')">Продолжить →</button>
+  </div>
+
+  <!-- Поздравление -->
+  <div id="congrats" class="section">
+    <img src="https://media.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif" alt="котик празднует">
+    <h1>Поздравляю, <span id="name">[Имя]</span>! 🎉</h1>
+    <p>Сегодня вам исполнилось <span id="age" class="age_obj">[Возраст]</span> лет 🎂<br>
+    Желаю счастья, радости и пушистого настроения 💖</p>
+    <button onclick="showSection('final')">Далее →</button>
+  </div>
+
+  <!-- Финал -->
+  <div id="final" class="section">
+    <img src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif" alt="котик машет лапкой">
+    <h1>Финалочка 💌</h1>
+    <p>Пусть каждый день будет полон любви, улыбок и пушистых объятий 🐾<br>
+    Возвращайся на главную, чтобы повторить праздник!</p>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+      <button>На главную страницу ⟳</button>
+    </a>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    const name = "Саида Эже";
+    const age = 23;
+    document.getElementById("name").textContent = name;
+    document.getElementById("age").textContent = age;
+  </script>
+
+</body>
+</html>
